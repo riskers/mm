@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style>
+	.wrap{
+		width:200px;
+	}
+	.wrap a{
+		display:inline-block;
+		position: relative;
+		width:100%;
+		border-radius: 5px;
+		overflow:hidden;
+	}
+	.wrap a img{
+		width:100%;
+		vertical-align:top;
+	}
+	.wrap a p{
+		margin:0;
+		position:absolute;
+		bottom:-30px;
+		left:0;
+		height:30px;
+		line-height:30px;
+		width:100%;
+		text-align:center;
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow: ellipsis;
+		color:#FFF;
+		padding:0 10px;
+		box-sizing: border-box;
+		background-color:rgba(0,0,0,0.6);
+		-webkit-transition:bottom 100ms linear;
+	}
+	.wrap:hover p{
+		bottom:0;
+	}
+	.next{
+		width:80%;
+		margin:10px auto;
+		text-align:center;
+	}
+	#next{
+		display:block;
+		height:30px;
+		line-height:30px;
+		border:1px solid #ccc;
+		border-radius:15px;
+		background-color:#FFF;
+		box-shadow:0 1px 4px #eaeaea;
+		color:#999;
+		text-decoration:none;
+	}
+	#next:hover{
+		box-shadow:0 1px 4px #999;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="next">
+			<a href="javascript:void(0);" id="next">Next</a>
+		</div>
+		<div id="wrap">
+			
+		</div>
+	</div>
+	<script src="js/mustache.js"></script>
+	<script id="tpl" type="x-tmpl-mustache">
+		{{#data}}
+			<a href="{{url}}" target="_blank" class="bar">
+				<img src="{{picUrl}}" alt="{{description}}">
+				<p>{{title}}</p>
+			</a>
+		{{/data}}
+	</script>
+    <script src="js/main.js"></script>
+</body>
+</html>
