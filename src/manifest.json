@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "mm",
     "version": "1.0",
-    "description": "mm看图",
+    "description": "美女看图",
     "icons": {
         "16": "images/icon16.png",
         "48": "images/icon48.png",
@@ -13,7 +13,7 @@
             "19": "images/icon19.png",
             "38": "images/icon38.png"
         },
-        "default_title": "点我~。~",
+        "default_title": "beauty",
         "default_popup": "popup.html"
     },
 	"permissions" : [
