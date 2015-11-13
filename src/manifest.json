@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "mm",
-    "version": "1.0",
+    "version": "1.1",
     "description": "美女看图",
     "icons": {
         "16": "images/icon16.png",
