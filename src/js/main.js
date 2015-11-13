@@ -9,23 +9,51 @@ function httpRequest(url, callback){
     xhr.send();
 }
 
-function showImg(result){
-    var result = JSON.parse(result) ;
-    var data = result['0'] ;
-    
+function showGirl(result){
+    //var result = JSON.parse(result);
+
+    var data = result ;
+
     var template = this.tpl.innerHTML ;
     var html = Mustache.render(template,{
-    	data : data 
+        data : data 
     })
-	document.getElementById('wrap').innerHTML = html ;
+    
+    document.getElementById('wrap').innerHTML = html ;
 }
 
-var url = 'http://meimeigirl.sinaapp.com/?num=1';
-httpRequest(url, showImg);
+function init(){
+    Data = [] ;
+    index = 0 ;
 
-var oBtn = document.getElementById('next') ,
-	This = this 
+    httpRequest('http://api.huceo.com/meinv/?key=d26f6065854d1d1c77ac84972f6f84f9&num=50&rand=2',function(e){
+        var e = JSON.parse(e) ;
+
+        for(var i=0;i<47;i++){
+            Data.push(e[i]) ;
+        }
+        
+        showGirl(Data[index++]);
+        //document.gextElementById('test').innerHTML = index
+    });
+}
+
+var Data = [] ,
+    index = 0 ;
+
+var oBtn = document.getElementById('next') ;
+
+init() ;
+
 oBtn.addEventListener('click',function(){
-	httpRequest(url, showImg);
+    if(index=>5){
+        init()
+    }else{
+        showGirl(Data[index++])    
+        document.getElementById('test').innerHTML = index
+    }
 },false)
+
+
+
 

@@ -17,7 +17,6 @@
         "default_popup": "popup.html"
     },
 	"permissions" : [
-		
-		"http://meimeigirl.sinaapp.com/?num=*"
+		"http://api.huceo.com/meinv/?key=*&num=*"
 	] 
 }
